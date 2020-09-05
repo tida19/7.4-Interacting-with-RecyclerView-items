@@ -26,6 +26,8 @@ fun ImageView.setSleepImage(item: SleepNight) {
     })
 }
 @BindingAdapter("sleepQualityString")
-fun TextView.setSleepQualityString(item: SleepNight) {
-    text = convertNumericQualityToString(item.sleepQuality, context.resources)
+fun TextView.setSleepQualityString(item: SleepNight?) {
+    item?.let {
+        text = convertNumericQualityToString(item.sleepQuality, context.resources)
+    }
 }
